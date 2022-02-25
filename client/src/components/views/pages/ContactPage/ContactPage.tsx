@@ -1,13 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import Auth from '../../../../hoc/auth'
-
+import Typing from '../../commons/TypingOnce';
 
 const ContactPage = ():JSX.Element => {
 	const [Name, setName] = useState('');
 	const [Email, setEmail] = useState('');
 	const [Subject, setSubject] = useState('');
 	const [Message, setMessage] = useState('');
+	const [OnSubmit, setOnSubmit] = useState(true);
+	const [Words, setWords] = useState(["Contact"])
 
 	const validateForm = () => {
 		const $form = document.querySelector('.contact-form') as HTMLElement;
@@ -46,8 +48,13 @@ const ContactPage = ():JSX.Element => {
 
 	const submitHandler = async (e: { preventDefault: () => void; }) => {
 		e.preventDefault();
+		const $btnBox = document.querySelector('.contact-form .btn-box') as HTMLElement;
 
-		const $btnBox = document.querySelector('.btn-box') as HTMLElement;
+		if (!OnSubmit) {
+			return;
+		}
+
+		setOnSubmit(false);
 
 		axios.post('/mail', {
 		 	data: {
@@ -58,7 +65,7 @@ const ContactPage = ():JSX.Element => {
 			}
 		}).then((response) => {
 			console.log(response.data);
-			
+
 			$btnBox.innerHTML = 
 			`<div class="sent-message wave-animation">
 				<span>~</span>
@@ -68,13 +75,17 @@ const ContactPage = ():JSX.Element => {
 				<span>T</span>
 				<span>~</span>
 			</div>`
+
+			setOnSubmit(true);
 		})
 	}
 	
 	return (
 		<section className="page contact-page">
 			<div className="page-intro about__page-intro">
-				<h2 className="page-intro__title">Say Hello</h2>
+				<h2 className="page-intro__title">
+					<Typing words={ Words } />
+				</h2>
 			</div>
 			<div className="form-cont">
 				<form className="form contact-form" onSubmit={ submitHandler }>

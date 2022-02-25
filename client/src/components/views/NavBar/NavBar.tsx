@@ -10,6 +10,7 @@ const NavBar = ():JSX.Element => {
 	const dispatch = useDispatch();
 	const location = useLocation().pathname;
 	const AuthState = useSelector<any>(state => state.user.userData) as any;
+
 	const [mobileMenuEle, setMobileMenuEle] = useState(document.querySelector('.mobile-menu--overlay'));
 	const [Position, setPosition] = useState({
     clientX: 0,
@@ -17,6 +18,7 @@ const NavBar = ():JSX.Element => {
   });
 	const { clientX, clientY } = Position;
 	const [Scale, setScale] = useState(false);
+	const [Mode, setMode] = useState("");
 
 	const showMenu = () => {
 		setMobileMenuEle(document.querySelector('.mobile-menu--overlay'));
@@ -72,10 +74,6 @@ const NavBar = ():JSX.Element => {
 	const mouseLeaveHandler = () => {
 		setScale(false);
 	}
-	
-	// useEffect(() => {
-	// 	setMobileMenuEle(document.querySelector('.mobile-menu--overlay'));
-	// }, []);
 
 	useEffect(() => {
 		dispatch(auth());
@@ -86,6 +84,9 @@ const NavBar = ():JSX.Element => {
 			<div className="cursor">
 				{
 					Scale === true 
+					?	
+					location &&
+					location === "/lab"
 					? (
 						<svg
 							width={200}
@@ -93,7 +94,28 @@ const NavBar = ():JSX.Element => {
 							viewBox="0 0 50 50"
 							style={{
 								position: "absolute",
-								zIndex: -1,
+								zIndex: 0,
+								left: clientX,
+								top: clientY,
+								transform: "translate(-50%, -50%)",
+							}}
+						>
+							<circle
+								cx="25"
+								cy="25"
+								r="8"
+								fill="rgba(255,255,255,0.9)"
+							/>
+						</svg>
+					)
+					: (
+						<svg
+							width={200}
+							height={200}
+							viewBox="0 0 50 50"
+							style={{
+								position: "absolute",
+								zIndex: 0,
 								left: clientX,
 								top: clientY,
 								transform: "translate(-50%, -50%)",
@@ -188,12 +210,12 @@ const NavBar = ():JSX.Element => {
 												<ul className="flex-grid">
 													<li className="btn-box">
 														<Link to="/register" className="btn btn--dark btn--small sign-up">
-														<span className="btn-text">Sign up</span>
+														<span className="btn__text">Sign up</span>
 														</Link>
 													</li>
 													<li className="btn-box">
 														<Link to="/login" className="btn btn--small sign-in">
-															<span className="btn-text">Sign in</span>
+															<span className="btn__text">Sign in</span>
 														</Link>
 													</li>
 												</ul>
@@ -244,18 +266,18 @@ const NavBar = ():JSX.Element => {
 													<button className="btn btn--small btn--dark sign-out" onClick={ () => {
 														onClickHandler()
 														hideMenu()
-													} }><span className="btn-text">Sign out</span></button>
+													} }><span className="btn__text">Sign out</span></button>
 												</span>
 											: (
 												<ul className="flex-grid">
 													<li className="btn-box">
 														<Link to="/register" onClick={ hideMenu } className="btn btn--small sign-up">
-															<span className="btn-text">Sign up</span>
+															<span className="btn__text">Sign up</span>
 														</Link>
 													</li>
 													<li className="btn-box">
 														<Link to="/login" onClick={ hideMenu } className="btn btn--small btn--dark sign-in">
-															<span className="btn-text">Sign in</span>
+															<span className="btn__text">Sign in</span>
 														</Link>
 													</li>
 												</ul>

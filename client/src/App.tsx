@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
 import Footer from './components/views/Footer/Footer';
-import NavBar from './components/views/NavBar/NavBar'
+import NavBar from './components/views/NavBar/NavBar';
+import ScrollToTop from './components/views/commons/ScrollToTop';
+import { useLocation } from 'react-router';
 
 let LandingPage = React.lazy(() => { return import('./components/views/pages/LandingPage/LandingPage') })
 let AboutPage = React.lazy(() => { return import('./components/views/pages/AboutPage/AboutPage') })
@@ -12,6 +14,34 @@ let LoginPage = React.lazy(() => { return import('./components/views/pages/Login
 let RegisterPage = React.lazy(() => { return import('./components/views/pages/RegisterPage/RegisterPage') })
 
 const App = ():JSX.Element => {
+	const location = useLocation();
+
+	const pathnameChecker = () => {
+		if (location) {
+			let path = location.pathname;
+			let currentName = path.split('/')[1];
+			modeHandler(currentName);
+		}
+	}
+
+	const modeHandler = (name : string) => {
+		const $App = document.querySelector('.App');
+		if($App) {
+			$App.classList.remove('dark-mode');
+			$App.classList.remove('pink-mode');
+
+			if (name === "lab") {
+				$App.classList.add('dark-mode');
+			} else if (name === "contact") {
+				$App.classList.add('pink-mode');
+			}
+		}
+	}
+
+	useEffect(() => {
+		pathnameChecker();
+	}, [ location ])
+
 	return (
 		<div className="App">
 			<NavBar />
@@ -48,6 +78,7 @@ const App = ():JSX.Element => {
 				}/>
 			</Routes>
 			<Footer />
+			<ScrollToTop />
 		</div>
 	);
 }

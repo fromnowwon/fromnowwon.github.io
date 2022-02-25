@@ -111,7 +111,7 @@ const RegisterPage = ():JSX.Element => {
 					</label>
 					<span className="btn-box">
 						<button className="btn btn--small btn--dark" onClick={ validateForm }>
-							<span className="btn-text">
+							<span className="btn__text">
 								Submit
 							</span>
 						</button>
@@ -121,7 +121,7 @@ const RegisterPage = ():JSX.Element => {
 			<div className="btn-cont flex-grid flex-grid--center">
 				<div className="btn-box">
 					<button onClick={ goBack } className="btn btn--underline go-back">
-						<span className="btn-text">
+						<span className="btn__text">
 							Go back
 						</span>
 					</button>

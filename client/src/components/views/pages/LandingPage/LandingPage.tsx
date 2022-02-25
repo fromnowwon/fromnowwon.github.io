@@ -2,16 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Auth from '../../../../hoc/auth'
 import AboutSection from './Sections/AboutSection';
-import MainVisual from './Sections/MainVisual';
-import Typing from './Sections/Typing';
 import LabSection from './Sections/LabSection';
 import { imgURL } from '../../../Config';
 
 const LandingPage = ():JSX.Element => {
 	return (
 		<div className="landing-page">
-			<Typing />
-			<MainVisual />
+			<div className="main-visual">
+				<figure>
+					<img src={ `${imgURL}hello-world-grey.gif` } />
+				</figure>
+			</div>
 			<AboutSection />
 			<LabSection />
 			<div className="flex-grid section-wrapper">
