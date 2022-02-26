@@ -138,7 +138,7 @@ const LabPage = ():JSX.Element => {
 													item.link.map((link, idx) => {
 														return (
 															<span className="link" key={ idx }>
-																<a href={ link.url } target={"_blank"}>{ link.title }</a>
+																<a href={ link.url } target="_blank">{ link.title }</a>
 															</span>
 														)
 													})

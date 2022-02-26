@@ -24,13 +24,19 @@ const Footer = () => {
 					<div className="footer__block__wrapper flex-grid flex-grid--wrap flex-grid--dir-column">
 						<p className="footer__block__title">FIND ME ALSO ON</p>
 						<div className="footer__block__item">
-							<a className="link" href="https://github.com/fromnowwon" target={"_blank"}>GITHUB</a>
+							<span className="link">
+								<a href="https://github.com/fromnowwon" target={"_blank"}>GITHUB</a>
+							</span>
 						</div>
 						<div className="footer__block__item">
-							<a className="link" href="#/" onClick={e => e.preventDefault}>CODEPEN</a>
+							<span className="link">
+								<a href="#/" onClick={e => e.preventDefault}>CODEPEN</a>
+							</span>
 						</div>
 						<div className="footer__block__item">
-							<a className="link" href="https://velog.io/@nemo/" target={"_blank"}>VELOG</a>
+							<span className="link">
+								<a href="https://velog.io/@nemo/" target={"_blank"}>VELOG</a>
+							</span>
 						</div>
 					</div>
 				</div>
