@@ -249,7 +249,6 @@ body {
 		max-width: 1200px;
 		margin: 0 auto;
 		padding: 0 0.25rem 0.75rem;
-		border-bottom: 1px solid $color-text;
 	}
 	.logo {
 		a {
@@ -427,28 +426,16 @@ body {
 
 // Landing page
 .landing-page {
-	// *Typing text
-	.typing-text {
-		max-width: 1200px;
-		margin: 1rem auto 0;
-		.message {
-			font-weight: 700;
-			font-size: 2.5rem;
-			text-align: center;
-			&::after {
-				content: "|";
-				animation: blink ease 1s infinite;
-			}
-		}
-	}
 	// Visual
 	.main-visual {
 		width: 100%;
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 0.75rem;
-		img {
-			object-fit: cover;
+		// padding: 0 0.75rem;
+		figure {
+			max-width: 1200px;
+			margin: 0 auto;
+			img {
+				object-fit: cover;
+			}
 		}
 	}
 	// Section
@@ -471,31 +458,40 @@ body {
 		.section__contents {
 			margin-top: 2rem;
 		}
-		.btn-box {
-			margin-top: 4rem;
-		}
+		// .btn-box {
+		// 	margin-top: 2rem;
+		// }
 	}
 	.about-section {
-		// Scrolling
-		.scrolling-logo {
-			position: relative;
-			width: 100%;
-			max-width: 1200px;
-			height: 50px;
-			margin: 2rem auto 0; 
-			overflow-x: hidden;
-			.scrolling-logo__wrapper {
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 50px;
-				.logo-box {
-					position: absolute;
-					top: 50%;
-					flex-shrink: 0;
-					width: 50px;
-					img {
-						width: 100%;
+		overflow-x: hidden;
+		padding: 2rem 0;
+		.btn {
+			border: none;
+		}
+		.rolling-container {
+			min-width: 100%;
+			margin-top: 1rem;
+			white-space: nowrap;
+			&:hover {
+				.message {
+					color: $color-point;
+				}
+			}
+			.rolling-message {
+				flex-shrink: 0;
+				align-items: center;
+				-webkit-animation: rolling-left 50s linear infinite;
+				animation: rolling-left 50s linear infinite;
+				a {
+					display: inline-block;
+					.message {
+						display: inline-block;
+						position: relative;
+						padding-right: 1rem;
+						font-weight: 700;
+						font-size: 2.5rem;
+						line-height: 1.4;
+						transition: all ease-in 0.2s;
 					}
 				}
 			}
@@ -557,6 +553,7 @@ body {
 						line-height: 1.3;
 						text-transform: uppercase;
 						color: $color-main;
+						transition: all ease-in 0.2s;
 					}
 				}
 				.item-ico {
@@ -661,6 +658,7 @@ body {
 .about-page {
 	max-width: 1200px;
 	margin: auto;
+	padding-bottom: 0;
 	.visual {
 		margin-top: 3rem;
 	}
@@ -800,7 +798,7 @@ body {
 		.contact {
 			text-align: center;
 			margin-top: 4rem;
-			padding-top: 3rem;
+			padding: 3rem 0 4rem;
 			border-top: 1px solid $color-text;
 			a {
 				display: inline-block;
@@ -1371,12 +1369,8 @@ body {
 				border-top: 0;
 				border-left: 1px solid $color-text;
 			}
-			.contact {
-
-			}
 		}
 	}
-
 }
 
 /* Tablet */
@@ -1457,21 +1451,23 @@ body {
 	}
 	
 	.landing-page {
-		// *Typing text
-		.typing-text {
-			margin: 2.5rem auto 0;
-			.message {
-				font-size: 6rem;
-			}
-		}
-
 		// Section
 		.section-wrapper {
 			.btn-ico {
 				max-width: 230px;
 			}
 		}
-
+		.about-section {
+			.rolling-container {
+				.rolling-message {
+					a {
+						.message {
+							font-size: 2.5rem;
+						}
+					}
+				}
+			}
+		}
 		.lab-section {
 			.lab-list {
 				.lab-list__item {
@@ -1549,9 +1545,9 @@ body {
 	}
 
 	.about-page {
+		padding-bottom: 0;
 		.introduce {
 			.contact {
-				padding: 4rem 0 0;
 				a {
 					.link-text {
 						padding-left: 75px;
@@ -1668,10 +1664,15 @@ body {
 	}
 
 	.landing-page {
-		// *Typing text
-		.typing-text {
-			.message {
-				font-size: 7rem;
+		.about-section {
+			.rolling-container {
+				.rolling-message {
+					a {
+						.message {
+							font-size: 3.5rem;
+						}
+					}
+				}
 			}
 		}
 
@@ -1715,7 +1716,21 @@ body {
 }
 
 /* Desktop (Large) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+	.landing-page {
+		.about-section {
+			.rolling-container {
+				.rolling-message {
+					a {
+						.message {
+							font-size: 4.5rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 @-webkit-keyframes blink {
 	0%, 100% {
@@ -1923,5 +1938,26 @@ body {
 		transform: translate(-60px, -480px) scale(1.5);
 		opacity: 0;
 		filter: blur(5px);
+	}
+}
+
+@-webkit-keyframes rolling-left {
+	from {
+		-webkit-transform: translateX(0);
+						transform: translateX(0);
+	}
+	to {
+		-webkit-transform: translateX(-100%);
+						transform: translateX(-100%);
+	}
+}
+@keyframes rolling-left {
+	from {
+		-webkit-transform: translateX(0);
+						transform: translateX(0);
+	}
+	to {
+		-webkit-transform: translateX(-100%);
+						transform: translateX(-100%);
 	}
 }

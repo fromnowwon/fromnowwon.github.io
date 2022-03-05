@@ -147,7 +147,7 @@ const AboutPage = (): JSX.Element => {
 							<li className="heart"></li>
 						</ul>
 					</Link>
-					</div>
+				</div>
 			</div>
 		</section>
 	)
