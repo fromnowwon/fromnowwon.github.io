@@ -2,5 +2,5 @@
 dev.js
 
 # env
-# .env
+.env
 /node_modules
