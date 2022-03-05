@@ -19,6 +19,12 @@ const LabSection = () => {
 						</Link>
 						<span className="item-ico"></span>
 					</div>
+					<div className="lab-list__item movieApp">
+						<Link to="/lab" className="flex-grid flex-grid--center flex-grid--align-center">
+							<span className="item-text">Map Search App</span>
+						</Link>
+						<span className="item-ico"></span>
+					</div>
 					<div className="lab-list__item coinTracker">
 						<Link to="/lab" className="flex-grid flex-grid--center flex-grid--align-center">
 							<span className="item-text">Coin Tracker</span>

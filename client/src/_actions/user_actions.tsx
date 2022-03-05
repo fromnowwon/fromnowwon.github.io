@@ -49,7 +49,7 @@ export function logoutUser(){
 	.then(response => response.data);
 
 	return {
-			type: LOGOUT_USER,
-			payload: request
+		type: LOGOUT_USER,
+		payload: request
 	}
 }

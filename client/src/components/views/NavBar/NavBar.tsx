@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router";
-import { auth } from '../../../_actions/user_actions'
+import { auth } from '../../../_actions/user_actions';
 
 const NavBar = ():JSX.Element => {
 	const navigate = useNavigate();
@@ -18,7 +18,6 @@ const NavBar = ():JSX.Element => {
   });
 	const { clientX, clientY } = Position;
 	const [Scale, setScale] = useState(false);
-	const [Mode, setMode] = useState("");
 
 	const showMenu = () => {
 		setMobileMenuEle(document.querySelector('.mobile-menu--overlay'));
@@ -68,11 +67,15 @@ const NavBar = ():JSX.Element => {
 	}, [])
 
 	const mouseOverHandler = () => {
+		const $cursor = document.querySelector('.cursor') as HTMLElement;
 		setScale(true);
+		$cursor.style.zIndex = "0";
 	}
 
 	const mouseLeaveHandler = () => {
+		const $cursor = document.querySelector('.cursor') as HTMLElement;
 		setScale(false);
+		$cursor.style.zIndex = "999";
 	}
 
 	useEffect(() => {
@@ -84,51 +87,48 @@ const NavBar = ():JSX.Element => {
 			<div className="cursor">
 				{
 					Scale === true 
-					?	
-					location &&
-					location === "/lab"
-					? (
-						<svg
-							width={200}
-							height={200}
-							viewBox="0 0 50 50"
-							style={{
-								position: "absolute",
-								zIndex: 0,
-								left: clientX,
-								top: clientY,
-								transform: "translate(-50%, -50%)",
-							}}
-						>
-							<circle
-								cx="25"
-								cy="25"
-								r="8"
-								fill="rgba(255,255,255,0.9)"
-							/>
-						</svg>
-					)
-					: (
-						<svg
-							width={200}
-							height={200}
-							viewBox="0 0 50 50"
-							style={{
-								position: "absolute",
-								zIndex: 0,
-								left: clientX,
-								top: clientY,
-								transform: "translate(-50%, -50%)",
-							}}
-						>
-							<circle
-								cx="25"
-								cy="25"
-								r="8"
-								fill="#333"
-							/>
-						</svg>
-					)
+					?	location &&
+						location === "/lab"
+						? (
+							<svg
+								width={200}
+								height={200}
+								viewBox="0 0 50 50"
+								style={{
+									position: "absolute",
+									left: clientX,
+									top: clientY,
+									transform: "translate(-50%, -50%)",
+								}}
+							>
+								<circle
+									cx="25"
+									cy="25"
+									r="8"
+									fill="rgba(255,255,255,0.9)"
+								/>
+							</svg>
+						)
+						: (
+							<svg
+								width={200}
+								height={200}
+								viewBox="0 0 50 50"
+								style={{
+									position: "absolute",
+									left: clientX,
+									top: clientY,
+									transform: "translate(-50%, -50%)",
+								}}
+							>
+								<circle
+									cx="25"
+									cy="25"
+									r="8"
+									fill="#333"
+								/>
+							</svg>
+						)
 					: (
 						<svg
 							width={80}
@@ -136,7 +136,7 @@ const NavBar = ():JSX.Element => {
 							viewBox="0 0 50 50"
 							style={{
 								position: "absolute",
-								zIndex: 9999,
+								zIndex: 999,
 								left: clientX,
 								top: clientY,
 								transform: "translate(-50%, -50%)",
@@ -190,7 +190,8 @@ const NavBar = ():JSX.Element => {
 								</li>
 								<li>
 									<Link to="/contact"
-									onMouseOver={ mouseOverHandler } onMouseLeave={ mouseLeaveHandler }>HELLO</Link>
+									onMouseOver={ mouseOverHandler } 
+									onMouseLeave={ mouseLeaveHandler }>HELLO</Link>
 								</li>
 							</ul>
 						</nav>

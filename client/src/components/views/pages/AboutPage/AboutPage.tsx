@@ -54,9 +54,9 @@ const AboutPage = (): JSX.Element => {
 											<h4 className="detail__title">IKEA JAPAN</h4>
 											<div className="link-box">
 												{/* Ratings and Reviews */}
-												<span className="link">
+												{/* <span className="link">
 													<a href="https://www.ikea.com/jp/ja/customer-service/shopping-at-ikea/ratings-reviews-pub9acdaea0" target="_blank">Link</a>
-												</span>
+												</span> */}
 												{/* Digital showroom */}
 												<span className="link">
 													<a href="https://www.ikea.com/jp/ja/campaigns/digital-showroom-pub0585e8d0" target="_blank">Link</a>
@@ -69,22 +69,18 @@ const AboutPage = (): JSX.Element => {
 												<span className="link">
 													<a href="https://www.ikea.com/jp/ja/campaigns/tlp-pubd93dc8a0" target="_blank">Link</a>
 												</span>
-												{/* Contact us */}
-												<span className="link">
-													<a href="https://www.ikea.com/jp/ja/customer-service/contact-us/" target="_blank">Link</a>
-												</span>
 												{/* IKEA RESTAURANT */}
-												<span className="link">
+												{/* <span className="link">
 													<a href="https://www.ikea.com/jp/ja/stores/restaurant/?itm_campaign=ikea-restaurant&itm_element=Fan&itm_content=Food" target="_blank">Link</a>
-												</span>
+												</span> */}
 												{/* MSR */}
 												<span className="link">
 													<a href="https://www.ikea.com/jp/ja/campaigns/ca00-made-for-japan-pub008631e0" target="_blank">Link</a>
 												</span>
 												{/* Eco bags */}
-												<span className="link">
+												{/* <span className="link">
 													<a href="https://www.ikea.com/jp/ja/campaigns/ca00-everyday-eco-bags-pubefcc3c10" target="_blank">Link</a>
-												</span>
+												</span> */}
 												{/* Better Sleep pt.2 */}
 												<span className="link">
 													<a href="https://www.ikea.com/jp/ja/campaigns/ca00-better-sleep-pubbd353860" target="_blank">Link</a>
@@ -133,14 +129,24 @@ const AboutPage = (): JSX.Element => {
 					</div>
 				</div>
 				<div className="introduce__cont contact">
-						<h2>Say Hello</h2>
-						<div className="contact__btn">
-							<span className="contact-ico btn-ico">
-								<Link to="/contact" className="btn btn--default btn--dark btn--arrow">
-									<img src={`${imgURL}mail.png`} alt="Contact" />
-								</Link>
-							</span>
-						</div>
+					<Link to="/contact">
+						<span className="link-text">SAY HELLO</span>
+						<em className="bar"></em>
+						<ul className="hearts flying">
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+							<li className="heart"></li>
+						</ul>
+					</Link>
 					</div>
 			</div>
 		</section>

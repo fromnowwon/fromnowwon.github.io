@@ -51,6 +51,29 @@ export default [
 		]
 	},
 	{
+		name: "mapSearchApp",
+		image: "kakao-api-map-search-app-16_9.gif",
+		tag: ["#API", "#Map"],
+		title: "Map Search App",
+		description: "카카오 맵 API를 사용하여 지도 검색 기능을 구현한 애플리케이션",
+		stack: {
+			client: "React",
+			backend: "-",
+			db: "-",
+		},
+		language: "TypeScript, SCSS",
+		link: [
+			{ 
+				title: "Demo",
+				url: "https://fromnowwon.github.io/map-search-app/"
+			},
+			{ 
+				title: "Github",
+				url: "https://github.com/fromnowwon/map-search-app.git"
+			},
+		]
+	},
+	{
 		name: "coinTracker",
 		image: "coin-tracker-16_9.jpg",
 		tag: ["#API"],

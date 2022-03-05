@@ -2,9 +2,11 @@
 import { combineReducers } from "redux";
 
 import user from './user_reducer';
+import mode from './mode_reducer';
 
 const rootReducer = combineReducers({
 	user,
+	mode,
 })
 
 export default rootReducer

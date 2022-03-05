@@ -60,7 +60,7 @@ const SkillsCarousel = () => {
 								</td>
 							</tr>
 							<tr>
-								<th>JavsScript</th>
+								<th>JavaScript</th>
 								<td>
 									<div className="step">
 										<span className="img">
@@ -103,7 +103,7 @@ const SkillsCarousel = () => {
 										<span className="img">
 											<img src={ `${imgURL}step.png` } />
 										</span>
-										<span className="bg perc-80"></span>
+										<span className="bg perc-70"></span>
 									</div>
 								</td>
 							</tr>
@@ -129,7 +129,7 @@ const SkillsCarousel = () => {
 										<span className="img">
 											<img src={ `${imgURL}step.png` } />
 										</span>
-										<span className="bg perc-70"></span>
+										<span className="bg perc-60"></span>
 									</div>
 								</td>
 							</tr>
@@ -140,7 +140,7 @@ const SkillsCarousel = () => {
 										<span className="img">
 											<img src={ `${imgURL}step.png` } />
 										</span>
-										<span className="bg perc-70"></span>
+										<span className="bg perc-60"></span>
 									</div>
 								</td>
 							</tr>

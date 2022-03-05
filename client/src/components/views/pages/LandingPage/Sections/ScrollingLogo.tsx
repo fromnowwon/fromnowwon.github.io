@@ -23,8 +23,6 @@ const ScrollingLogo = ():JSX.Element => {
 		`bootstrap-logo.png`
 	]);
 	
-	const [scrollStatus, setScrollStatus] = useState(false);
-
 	let scrollAnimation: number;
 	let speed = 0;
 	let gap = 60;
@@ -61,7 +59,7 @@ const ScrollingLogo = ():JSX.Element => {
 		speed -= 1;
 		
 		if ($logos) {
-			console.log('rolling..')
+			// console.log('rolling..')
 			for (let i = 0; i < $logos.length; i++) {
 				let logo = $logos[i];
 				let distLeft = logo.getBoundingClientRect().left;
@@ -92,24 +90,17 @@ const ScrollingLogo = ():JSX.Element => {
 	}
 
 	const resetScroll = () => {
-		const $wrapper = document.querySelector<HTMLElement>('.scrolling-logo__wrapper');
-
 		cancelAnimationFrame(scrollAnimation);
 	}
 
 	useEffect(() => {
 		scroll();
-	}, [])
-
-	useEffect(() => {
 		logosPos();
-	}, []);
 
-	useEffect(() => {
 		return () => {
 			resetScroll();
 		}
-	}, [])
+	}, []);
 
 	return (
 		<div className="scrolling-logo">
