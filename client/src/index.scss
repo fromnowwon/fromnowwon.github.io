@@ -65,9 +65,11 @@ button {
 	border: none;
 	background-color: transparent;
 }
-input[type=text], input[type=button] {
+input {
+	border-radius: 0;
 	-webkit-appearance: none;
-	-webkit-border-radius: 0;
+	-moz-appearance: none;
+	appearance: none;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
