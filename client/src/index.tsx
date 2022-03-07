@@ -4,6 +4,7 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import ReactGA from 'react-ga';
 
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
@@ -13,10 +14,13 @@ import logger from 'redux-logger';
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from './_reducers';
 
+const TRACKING_ID = process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID as string;
+ReactGA.initialize(TRACKING_ID);
+
 const enhancer = 
-  process.env.NODE_ENV === "production"
-    ? compose(applyMiddleware(PromiseMiddleware, ReduxThunk))
-    : composeWithDevTools(applyMiddleware(PromiseMiddleware, ReduxThunk, logger));
+	process.env.NODE_ENV === "production"
+		? compose(applyMiddleware(PromiseMiddleware, ReduxThunk))
+		: composeWithDevTools(applyMiddleware(PromiseMiddleware, ReduxThunk, logger));
 
 const store = createStore(rootReducer, enhancer);
 

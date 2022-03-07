@@ -7,6 +7,7 @@ import ScrollToTop from './components/views/commons/ScrollToTop';
 import { useLocation } from 'react-router';
 import { modeHandler } from './_actions/mode_actions';
 import { useDispatch, useSelector } from "react-redux";
+import RouteChangeTracker from './components/RouteChangeTracker';
 
 let LandingPage = React.lazy(() => { return import('./components/views/pages/LandingPage/LandingPage') })
 let AboutPage = React.lazy(() => { return import('./components/views/pages/AboutPage/AboutPage') })
@@ -19,6 +20,8 @@ const App = ():JSX.Element => {
 	const location = useLocation();
 	const dispatch = useDispatch();
 	const mode = useSelector<any>(state => state.mode.pageMode) as string;
+
+	RouteChangeTracker();
 
 	useEffect(() => {
 		dispatch(modeHandler());
@@ -39,7 +42,6 @@ const App = ():JSX.Element => {
 			
 		}
 	}, [ mode ])
-
 
 	return (
 		<div className="App">
