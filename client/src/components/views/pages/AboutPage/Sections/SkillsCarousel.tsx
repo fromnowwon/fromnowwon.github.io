@@ -173,7 +173,7 @@ const SkillsCarousel = () => {
 						</tbody>
 					</table>
 				</div>
-				<div className='slide slide5'>
+				{/* <div className='slide slide5'>
 					<table>
 						<colgroup>
 							<col width="30%" />
@@ -198,7 +198,7 @@ const SkillsCarousel = () => {
 							</tr>
 						</tbody>
 					</table>
-				</div>
+				</div> */}
 				<div className='slide slide6'>
 					<table>
 						<colgroup>
