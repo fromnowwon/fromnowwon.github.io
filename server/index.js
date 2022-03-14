@@ -53,8 +53,6 @@ app.post('/api/users/register', (req, res) => {
 
 // 로그인을 위한 라우트
 app.post('/api/users/login', (req, res) => {
-	console.log("바디바디: " + req.body.email)
-
 	User.findOne({ email: req.body.email }, (err, user) => {
 		if(!user) {
 			return res.json({
