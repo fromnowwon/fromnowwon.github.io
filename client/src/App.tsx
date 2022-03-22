@@ -15,6 +15,7 @@ let LabPage = React.lazy(() => { return import('./components/views/pages/LabPage
 let ContactPage = React.lazy(() => { return import('./components/views/pages/ContactPage/ContactPage') })
 let LoginPage = React.lazy(() => { return import('./components/views/pages/LoginPage/LoginPage') })
 let RegisterPage = React.lazy(() => { return import('./components/views/pages/RegisterPage/RegisterPage') })
+let NotFound = React.lazy(() => { return import('./components/views/pages/NotFound/NotFound') })
 
 const App = ():JSX.Element => {
 	const location = useLocation();
@@ -77,6 +78,14 @@ const App = ():JSX.Element => {
 						<RegisterPage />
 					</React.Suspense>
 				}/>
+				<Route 
+					path="*"
+					element={ 
+						<React.Suspense fallback={ <div className="fallback-message">Loading...</div> }>
+							<NotFound />
+						</React.Suspense>
+					}
+				/>
 			</Routes>
 			<Footer />
 			<ScrollToTop />

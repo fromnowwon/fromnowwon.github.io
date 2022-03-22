@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Auth from "../../../../hoc/auth"
 
@@ -34,10 +33,6 @@ const RegisterPage = ():JSX.Element => {
 
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-
-		console.log('Email:', Email);
-		console.log('name:', Name);
-		console.log('Password:', Password);
 
 		if (Password !== ConfirmPassword) {
 			return alert('두 비밀번호는 같아야 합니다.')

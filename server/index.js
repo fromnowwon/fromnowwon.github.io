@@ -65,6 +65,7 @@ app.post('/api/users/login', (req, res) => {
 			if(!isMatch) 
 			return res.json( {loginSuccess: false, message: "비밀번호가 틀렸습니다."} )
 
+			// 유저 토큰 생성
 			user.generateToken((err, user) => {
 				if(err) return res.status(400).send(err);
 
