@@ -75,7 +75,7 @@ export default [
 	},
 	{
 		name: "coinTracker",
-		image: "coin-tracker-16_9.jpg",
+		image: "coin-tracker-app.gif",
 		tag: ["#API"],
 		title: "Coin Tracker",
 		description: "실시간 암호 화폐 시세, 총 시가, 거래량, 거래 변동을 보여주는 웹 서비스 구현",
