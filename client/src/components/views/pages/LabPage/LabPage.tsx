@@ -1,45 +1,66 @@
 import React, { useEffect, useState } from 'react'
+import { HashLink } from 'react-router-hash-link';
 import Auth from '../../../../hoc/auth'
 import { imgURL } from '../../../Config'
 import labList from '../../../../data/labList'
 import Typing from '../../commons/TypingOnce';
+import { useRef } from 'react';
 
 const LabPage = ():JSX.Element => {
-	const [LabList, setLabList] = useState(labList);
+	const [lab, setLab] = useState(labList);
+	const labListRef = useRef<HTMLDivElement>(null);
+	const anchorRef = useRef<HTMLDivElement>(null);
+	const itemRef = useRef<HTMLDivElement[]>([]);
 
-	const anchorScroll = (e: { preventDefault: () => void; currentTarget: any; }) => {
-		e.preventDefault();
+	const observer = () => {
+		const anchors = anchorRef.current?.querySelector('ul')?.children;
 		
-		let hash = e.currentTarget.getAttribute("href");
-		let name = hash.substring(1);
-		let ele = document.getElementById(name);
+		const options = {
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.45
+		}
+		
+		const io = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry) => {
+				let idx = Number(entry.target.getAttribute("data-list"));
 
-		ele && ele.scrollIntoView({
-			behavior: "smooth",
-		});
-	}
-
-	const scrollDown = () => {
-		const $list = document.querySelector('.lab-list__inner');
-
-		$list && $list.scrollIntoView({
-			behavior: "smooth",
-		});
+				// 관찰 대상이 뷰포트에 들어왔을 경우
+				if (entry.intersectionRatio > 0.45) {
+					entry.target.classList.add("active");
+					
+					anchors && anchors[idx].classList.add('current');
+				}
+				// 관찰 대상이 뷰포트에 없을 경우
+				else {
+					entry.target.classList.remove("active");
+					anchors && anchors[idx].classList.remove('current');
+				}
+			});
+		}, options);
+	
+		for (let i = 0; i < itemRef.current.length; i++) {
+			io.observe(itemRef.current[i]);
+		}
 	}
 	
+	useEffect(() => {
+		observer();
+	}, [])
+	
 	const scrollEventNav = () => {
-		const $labList = document.querySelector('.lab-list');
-		const $anchor = document.querySelector('.anchor');
-		let boundingRect = $labList?.getBoundingClientRect();
+		// const $labList = document.querySelector('.lab-list');
+		const anchor = anchorRef.current;
+		let boundingRect = labListRef.current?.getBoundingClientRect();
 
 		if (boundingRect) {
 			if (boundingRect.top < 20 && boundingRect.bottom > 500) {
-				$anchor?.classList.remove('inactive');
-				$anchor?.classList.add('active');
+				anchor?.classList.remove('inactive');
+				anchor?.classList.add('active');
 			}
 			else {
-				$anchor?.classList.remove('active')
-				$anchor?.classList.add('inactive');
+				anchor?.classList.remove('active')
+				anchor?.classList.add('inactive');
 			}
 		}
 	}
@@ -70,15 +91,15 @@ const LabPage = ():JSX.Element => {
 					<Typing words={ ["Laboratory"] } />
 				</h2>
 			</div>
-			<div className="anchor inactive" onMouseOver={ cursorOver } onMouseLeave={ cursorLeave }>
+			<div className="anchor inactive" ref={ anchorRef } onMouseOver={ cursorOver } onMouseLeave={ cursorLeave }>
 				<ul>
 					{
-						LabList.map((item, idx) => {
+						lab.map((item, idx) => {
 							return (
-								<li key={ idx }>
-									<a href={ `#${item.name}` } onClick={ anchorScroll }>
+								<li data-anchor={idx} key={ idx }>
+									<HashLink smooth to={ `#${item.name}` }>
 										<span className="anchor__title">{ item.title }</span>
-									</a>
+									</HashLink>
 								</li>
 							)
 						})
@@ -86,17 +107,23 @@ const LabPage = ():JSX.Element => {
 				</ul>
 				<p className="arrow-text">Scroll to Explore</p>
 				<div className="scroll-down-arrow flex-grid flex-grid--center">
-					<span className="arrow" onClick={ scrollDown }>
+					<HashLink smooth to="#lab-list" className="arrow">
 						<img src={ `${imgURL}scroll-down-arrow-light.png` } alt=""></img>
-					</span>
+					</HashLink>
 				</div>
 			</div>
-			<div className="lab-list">
+			<div id="lab-list" className="lab-list" ref={ labListRef }>
 				<div className="lab-list__inner">
 					{
-						LabList.map((item, idx) => {
+						lab.map((item, idx) => {
 							return (
-								<div id={ item.name } className="lab-item flex-grid flex-grid--wrap" key={ idx }>
+								<div 
+									id={ item.name } 
+									className="lab-item flex-grid flex-grid--wrap" 
+									data-list={idx}
+									ref={elem => ( itemRef.current[idx] = elem as HTMLDivElement )}
+									key={ idx }
+								>
 									<div className="lab-item__visual">
 										<figure className="visual">
 											<img src={`${imgURL + item.image}`} alt={ item.title }></img>

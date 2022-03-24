@@ -1,17 +1,40 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
 	{
+		name: "next-weather-app",
+		image: "next-weather-app-16_9.gif",
+		tag: ["#API", "#SSR"],
+		title: "Weather App",
+		description: "전세계 도시 중 원하는 곳의 이름을 검색하면 해당 지역 날씨에 대한 정보를 제공하는 애플리케이션",
+		stack: {
+			client: "Next.js",
+			backend: "-",
+			db: "-",
+		},
+		language: "TypeScript, SCSS",
+		link: [
+			{ 
+				title: "Demo",
+				url: "https://nemo-next-weather-app.herokuapp.com/"
+			},
+			{ 
+				title: "Github",
+				url: "https://github.com/fromnowwon/next-weather-app.git"
+			},
+		]
+	},
+	{
 		name: "bbc",
 		image: "bbc-visual.jpg",
 		tag: ["#Clone coding", "#Scroll Interaction"],
-		title: "BBC 재택근무의 일상화, 코로나19가 바꿀 사무실의 미래",
+		title: "BBC, 코로나19가 바꿀 사무실의 미래",
 		description: "BBC VISUAL JOURNALISM에서 발행한 코로나 시대가 도래하면서 바뀌게 될 사무실 환경에 대한 콘텐츠",
 		stack: {
 			client: "React",
 			backend: "-",
 			db: "-",
 		},
-		language: "TypeScript, SCSS",
+		language: "CSS",
 		link: [
 			{ 
 				title: "Original",
@@ -28,7 +51,7 @@ export default [
 		]
 	},
 	{
-		name: "movieApp",
+		name: "movie-app",
 		image: "react-movie-app-16_9.gif",
 		tag: ["#API", "#Crawling", "#News ticker"],
 		title: "Movie App",
@@ -51,7 +74,7 @@ export default [
 		]
 	},
 	{
-		name: "mapSearchApp",
+		name: "map-search-app",
 		image: "kakao-api-map-search-app-16_9.gif",
 		tag: ["#API", "#Map"],
 		title: "Map Search App",
@@ -74,7 +97,7 @@ export default [
 		]
 	},
 	{
-		name: "coinTracker",
+		name: "coin-tracker",
 		image: "coin-tracker-app.gif",
 		tag: ["#API"],
 		title: "Coin Tracker",

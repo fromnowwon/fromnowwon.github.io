@@ -207,7 +207,7 @@ body {
 		outline: none;
 		border: 0;
 		vertical-align: middle;
-		padding: 5px 9px;
+		padding: 7px 9px;
 		border: 1px solid #bbb;
 		border-radius: 50%;
 		background: #eee;
@@ -233,6 +233,7 @@ body {
 			transition: all 175ms cubic-bezier(0, 0, 1, 1);
 		}
 		.scroll-to-top__btn {
+			display: block;
 			width: 10px;
 			height: 10px;
 			background: url('../public/images/arrow-top.png') center center no-repeat;
@@ -937,10 +938,16 @@ body {
 		padding: 0 0.75rem;
 		font-size: .9375rem;
 		text-align: center;
-		background-color: $color-text;
 		li {
 			+ li {
 				margin-top: 2rem;
+			}
+			&.current {
+				a {
+					.anchor__title {
+						font-weight: 700;
+					}
+				}
 			}
 			a {
 				display: inline-block;
@@ -972,20 +979,33 @@ body {
 		}
 	}
 	.lab-list {
+		background-color: $color-main;
 		.lab-list__inner {
-			background-color: $color-main;
+			max-width: 1200px;
+			padding: 3rem 1.5rem;
 		}
 		margin: 2rem auto 0;
 		.lab-item {
-			padding: 3rem 0.75rem;
+			+ .lab-item {
+				margin-top: 4rem;
+				padding-top: 4rem;
+				border-top: 1px solid #cfcfcf;
+			}
 			.lab-item__visual {
 				width: 100%;
+				.visual {
+					border-radius: 5px;
+					overflow: hidden;
+				}
 			}
 			.lab-item__info {
+				width: 100%;
 				margin-top: 2rem;
 				text-transform: uppercase;
 				.item-box {
-					margin-top: 1rem;
+					+.item-box {
+						margin-top: 1rem;
+					}
 					font-size: 0.6875rem;
 					.item__name {
 						display: block;
@@ -1478,7 +1498,7 @@ body {
 						}
 					}
 					.item-ico {
-					
+						
 					}
 				}
 			}
@@ -1490,9 +1510,9 @@ body {
 		padding: 9vw 0 10vw;
 		.anchor {
 			position: fixed;
-			top: 16.5rem; 
+			top: 14.5rem; 
 			left: 0;
-			width: 11rem;
+			width: 13rem;
 			margin-top: 0;
 			li {
 				text-align: right;
@@ -1500,6 +1520,11 @@ body {
 				opacity: 0;
 				+ li {
 					margin-top: 1rem;
+				}
+				a {
+					.anchor__title {
+						font-weight: 200;
+					}
 				}
 			}
 			&.active {
@@ -1539,7 +1564,7 @@ body {
 			}
 		}
 		.lab-list {
-			margin-left: 11rem;
+			margin-left: 13rem;
 		}
 	}
 
@@ -1733,6 +1758,24 @@ body {
 							font-size: 4.5rem;
 						}
 					}
+				}
+			}
+		}
+	}
+
+	.lab-page {
+		.lab-list {
+			.lab-item {
+				+ .lab-item {
+					margin-top: 6rem;
+					padding-top: 6rem;
+				}
+				.lab-item__visual {
+					width: 700px;
+				}
+				.lab-item__info {
+					width: calc(100% - 700px);
+					padding-left: 1rem;
 				}
 			}
 		}

@@ -1,4 +1,5 @@
 import React, { useEffect }  from 'react'
+import { HashLink } from 'react-router-hash-link';
 
 const ScrollToTop = () => {
 	const toTopVisible = () => {
@@ -12,13 +13,6 @@ const ScrollToTop = () => {
 		}
 	}
 
-	const toTop = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth"
-		});
-	}
-
 	useEffect(() => {
 		window.addEventListener("scroll", toTopVisible);
 		return () => {
@@ -27,9 +21,9 @@ const ScrollToTop = () => {
 	}, []);
 
 	return (
-		<div className="scroll-to-top" onClick={ toTop }>
+		<div className="scroll-to-top">
 			<div className="scroll-to-top__inner">
-				<button className="scroll-to-top__btn"></button>
+				<HashLink smooth to="#top" className="scroll-to-top__btn" />
 			</div>
 		</div>
 	)

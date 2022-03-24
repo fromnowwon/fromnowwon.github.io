@@ -108,14 +108,14 @@ const AboutPage = (): JSX.Element => {
 												</span>
 											</div>
 										</div>
-										<div className="detail__item">
+										{/* <div className="detail__item">
 											<h4 className="detail__title">PHONAK</h4>
 											<div className="link-box">
 												<span className="link">
 													<a href="https://fromnowwon.github.io/phonak" target="_blank">Link</a>
 												</span>
 											</div>
-										</div>
+										</div> */}
 									</div>
 								</li>
 							</ul>
