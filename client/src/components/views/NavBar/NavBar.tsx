@@ -47,8 +47,8 @@ const NavBar = ():JSX.Element => {
 		})
 	}
 
-	const updatePosition = (event: { pageX: any; pageY: any; clientX: any; clientY: any; }) => {
-		const { pageX, pageY, clientX, clientY } = event;
+	const updatePosition = (event: { clientX: any; clientY: any; }) => {
+		const { clientX, clientY } = event;
 
 		setPosition({
 			clientX,
@@ -59,11 +59,6 @@ const NavBar = ():JSX.Element => {
 	useEffect(() => {
 		document.addEventListener("mousemove", updatePosition, false);
 		document.addEventListener("mouseenter", updatePosition, false);
-
-		// return () => {
-		// 	document.removeEventListener("mousemove", updatePosition);
-		// 	document.removeEventListener("mouseenter", updatePosition);
-		// };
 	}, [])
 
 	const mouseOverHandler = () => {

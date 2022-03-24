@@ -65,18 +65,6 @@ const LabPage = ():JSX.Element => {
 		}
 	}
 
-	const cursorOver = () => {
-		const $cursor = document.querySelector('.cursor') as HTMLElement;
-
-		$cursor.style.zIndex = "2";
-	}
-
-	const cursorLeave = () => {
-		const $cursor = document.querySelector('.cursor') as HTMLElement;
-
-		$cursor.style.zIndex = "0";
-	}
-
 	useEffect(() => {
 		window.addEventListener("scroll", scrollEventNav);
 		return () => {
@@ -91,7 +79,7 @@ const LabPage = ():JSX.Element => {
 					<Typing words={ ["Laboratory"] } />
 				</h2>
 			</div>
-			<div className="anchor inactive" ref={ anchorRef } onMouseOver={ cursorOver } onMouseLeave={ cursorLeave }>
+			<div className="anchor inactive" ref={ anchorRef }>
 				<ul>
 					{
 						lab.map((item, idx) => {
