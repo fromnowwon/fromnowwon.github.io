@@ -24,6 +24,29 @@ export default [
 		]
 	},
 	{
+		name: "movie-watch-list",
+		image: "movie-watch-list-16_9.gif",
+		tag: ["#API", "#Context"],
+		title: "Movie Watch List",
+		description: "볼 영화 리스트(Watch list), 본 영화 리스트(Watched list)를 정리할 수 있는 애플리케이션",
+		stack: {
+			client: "React",
+			backend: "-",
+			db: "-",
+		},
+		language: "TypeScript, CSS",
+		link: [
+			{
+				title: "Demo",
+				url: "https://nemo-movie-watch-list.herokuapp.com/"
+			},
+			{ 
+				title: "Github",
+				url: "https://github.com/fromnowwon/movie-watch-list.git"
+			},
+		]
+	},
+	{
 		name: "bbc",
 		image: "bbc-visual.jpg",
 		tag: ["#Clone coding", "#Scroll Interaction"],
@@ -46,7 +69,7 @@ export default [
 			},
 			{ 
 				title: "Github",
-				url: "https://github.com/fromnowwon/bbc.git"
+				url: "https://github.com/fromnowwon/bbc/tree/main"
 			},
 		]
 	},
