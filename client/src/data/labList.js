@@ -28,7 +28,7 @@ export default [
 		image: "movie-watch-list-16_9.gif",
 		tag: ["#API", "#Context"],
 		title: "Movie Watch List",
-		description: "볼 영화 리스트(Watch list), 본 영화 리스트(Watched list)를 정리할 수 있는 애플리케이션",
+		description: "위시리스트처럼 영화의 와치리스트를 만들어 관리할 수 있는 애플리케이션",
 		stack: {
 			client: "React",
 			backend: "-",
