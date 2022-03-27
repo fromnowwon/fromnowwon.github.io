@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const config = require('./config/key');
 const { User } = require('./models/User');
 const { auth } = require('./middleware/auth');
+const path = require("path");
 require("dotenv").config();
 const mailer = require('./mailer.js');
 
@@ -102,18 +103,13 @@ app.get('/api/users/logout', auth, (req, res) => {
 })
 
 // production mode
-// if(process.env.NODE_ENV === "production") {
-// 	app.use(express.static("client/build"));
+if(process.env.NODE_ENV === "production") {
+	app.use(express.static("client/build"));
 
-// 	app.get("*", (req, res) => {
-// 		res.sendFile(path.join(__dirname, "../client/build/index.html"))
-// 	})
-// }
-app.use(express.static("client/build"));
-
-app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "../client/build/index.html"))
-})
+	app.get("*", (req, res) => {
+		res.sendFile(path.join(__dirname, "../client/build/index.html"))
+	})
+}
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
