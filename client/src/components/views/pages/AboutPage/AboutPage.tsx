@@ -3,7 +3,25 @@ import Auth from '../../../../hoc/auth'
 import Typing from '../../commons/TypingOnce';
 import { imgURL } from '../../../Config';
 import { Link } from 'react-router-dom';
-import SkillsCarousel from './Sections/SkillsCarousel'
+
+const skills = [
+	"HTML5",
+	"CSS",
+	"JavaScript",
+	"SCSS",
+	"REACT",
+	"Next.js",
+	"Node.js",
+	"Express.js",
+	"Github",
+	"Git",
+	"Jquery",
+	"Heroku",
+	"Github pages",
+	"Bootstrap",
+	"Semantic ui react",
+	"Zeplin",
+]
 
 const AboutPage = (): JSX.Element => {
 	return (
@@ -124,22 +142,11 @@ const AboutPage = (): JSX.Element => {
 					<div className="introduce__cont skills">
 						<h2>Skills</h2>
 						<div className="skills__tag-list flex-grid flex-grid--wrap">
-							<span className="skills__tag">HTML5</span>
-							<span className="skills__tag">CSS</span>
-							<span className="skills__tag">JavaScript</span>
-							<span className="skills__tag">SCSS</span>
-							<span className="skills__tag">REACT</span>
-							<span className="skills__tag">Next.js</span>
-							<span className="skills__tag">Node.js</span>
-							<span className="skills__tag">Express.js</span>
-							<span className="skills__tag">Github</span>
-							<span className="skills__tag">Git</span>
-							<span className="skills__tag">Jquery</span>
-							<span className="skills__tag">Heroku</span>
-							<span className="skills__tag">Github pages</span>
-							<span className="skills__tag">Bootstrap</span>
-							<span className="skills__tag">Semantic ui react</span>
-							<span className="skills__tag">Zeplin</span>
+							{
+								skills.map((skill, idx) => (
+									<span className="skills__tag" key={ idx }>{ skill }</span>
+								))
+							}
 						</div>
 					</div>
 				</div>
