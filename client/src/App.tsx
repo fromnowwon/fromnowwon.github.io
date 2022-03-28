@@ -26,7 +26,6 @@ const App = ():JSX.Element => {
 	RouteChangeTracker();
 
 	useEffect(() => {
-		console.log("지금 환경은?", process.env.NODE_ENV);
 		dispatch(modeHandler());
 	}, [ location ])
 
