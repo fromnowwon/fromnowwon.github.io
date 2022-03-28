@@ -10,7 +10,7 @@
 // color 정의
 $color-main: #e6e2dd;
 $color-point: #f7919b;
-$color-text: #333;
+$color-black: #333;
 
 body {
 	background-color: $color-main;
@@ -18,7 +18,7 @@ body {
 
 .dark-mode {
 	.nav-bar {
-		background-color: $color-text;
+		background-color: $color-black;
 		.menu {
 			.nav {
 				a {
@@ -41,7 +41,7 @@ body {
 		}
 	}
 	.loader {
-		background-color: $color-text;
+		background-color: $color-black;
 		color: $color-main;
 	}
 	.page {
@@ -62,9 +62,9 @@ body {
 			color: $color-main;
 			&.btn--dark {
 				background-color: $color-main;
-				color: $color-text;
+				color: $color-black;
 				.btn__text {
-					color: $color-text;
+					color: $color-black;
 				}
 			}
 		}
@@ -80,9 +80,9 @@ body {
 			&.btn--dark {
 				border: 1px solid $color-main;
 				background-color: $color-main;
-				color: $color-text;
+				color: $color-black;
 				.btn__text{
-					color: $color-text;
+					color: $color-black;
 				}
 				&:hover {
 					background-color: rgb(153, 153, 153);
@@ -99,14 +99,14 @@ body {
 		.menu {
 			.nav {
 				a {
-					color: $color-text;
+					color: $color-black;
 				}
 			}
 		}
 		.logo {
 			h1 {
 				em {
-					color: $color-text;
+					color: $color-black;
 				}
 			}
 		}
@@ -122,10 +122,10 @@ body {
 	}
 	.btn-box {
 		.btn--default {
-			border: 1px solid $color-text;
-			color: $color-text;
+			border: 1px solid $color-black;
+			color: $color-black;
 			&.btn--dark {
-				background-color: $color-text;
+				background-color: $color-black;
 				color: $color-point;
 				.btn__text {
 					color: $color-point;
@@ -133,10 +133,10 @@ body {
 			}
 		}
 		.btn--small {
-			color: $color-text;
-			border: 1px solid $color-text;
+			color: $color-black;
+			border: 1px solid $color-black;
 			.btn__text{
-				color: $color-text;
+				color: $color-black;
 			}
 			&:hover {
 				border: 1px solid #555;
@@ -283,7 +283,7 @@ body {
 				em {
 					position: absolute;
 					top: 0;
-					color: $color-text;
+					color: $color-black;
 					transition: all ease-in-out 0.3s;
 				}
 				.plus {
@@ -319,7 +319,7 @@ body {
 		height: 100vh;
 		padding: 2rem 0.75rem;
 		z-index: 999;
-		background-color: $color-text;
+		background-color: $color-black;
 		font-size: 16px;
 		transition: all 0.3s ease-in-out;
 		nav {
@@ -358,12 +358,12 @@ body {
 					background-color: $color-main;
 					border: 1px solid $color-main;
 					.btn__text {
-						color: $color-text;
+						color: $color-black;
 					}
 				}
 				.sign-in {
 					border: 1px solid #bbb;
-					background-color: $color-text;
+					background-color: $color-black;
 					.btn__text {
 						color: $color-main;
 					}
@@ -506,7 +506,7 @@ body {
 		}
 	}
 	.lab-section {
-		background-color: $color-text;
+		background-color: $color-black;
 		.lab-list {
 			max-width: 1200px;
 			margin: 0 auto;
@@ -530,19 +530,19 @@ body {
 				&.see-more {
 					background-color: $color-main;
 					&::before {
-						color: $color-text;
+						color: $color-black;
 					}
 					a {
 						&:hover {
 							background: url('../public/images/spin.gif') center center no-repeat;
 							background-size: 120% auto;
 							.item-text {
-								color: $color-text;
+								color: $color-black;
 							}
 						}
 					}
 					.item-text {
-						color: $color-text;
+						color: $color-black;
 					}
 				}
 				a {
@@ -584,7 +584,7 @@ body {
 			padding: 2rem 1rem 4rem;
 			text-align: center;
 			+.section {
-				border-left: 1px solid $color-text;
+				border-left: 1px solid $color-black;
 			}
 		}
 		.btn-ico {
@@ -619,7 +619,7 @@ body {
 	.contact-form {
 		max-width: 500px;
 		.form__input {
-			background-color: $color-text;
+			background-color: $color-black;
 			color: $color-main;
 		}
 	}
@@ -735,79 +735,99 @@ body {
 			max-width: 550px;
 			margin-top: 4rem;
 			padding-top: 3rem;
-			border-top: 1px solid $color-text;
-			.skills__table {
+			border-top: 1px solid $color-black;
+			&__tag-list {
 				margin-top: 1rem;
-				table {
-					table-layout: fixed;
-					width: 100%;
-					font-size: 0.75rem;
-					text-transform: uppercase;
-					thead {
-						th {
-							padding: 0.5rem 1rem;
-							border-top: 1px solid $color-text;
-							border-bottom: 1px solid $color-text;
-							background-color: $color-text;
-							color: $color-main;
-						}
-					}
-					tbody {
-						th {
-							padding: 0.5rem 1rem;
-							border-bottom: 1px solid $color-text;
-							border-right: 1px solid $color-text;
-							vertical-align: middle;
-						}
-						td {
-							padding: 0.5rem 1rem;
-							border-bottom: 1px solid $color-text;
-						}
-						.step {
-							position: relative;
-							height: 0;
-							padding-bottom: 10%;
-							.img {
-								position: absolute;
-								left: 0;
-								top: 0;
-								z-index: 1;
-								width: 100%;
-							}
-							.bg {
-								display: inline-block;
-								position: absolute;
-								left: 0;
-								top: 0;
-								z-index: 0;
-								height: 100%;
-								background-color: $color-text;
-								&.perc-90 {
-									width: 90%;
-								}
-								&.perc-80 {
-									width: 80%;
-								}
-								&.perc-70 {
-									width: 70%;
-								}
-								&.perc-60 {
-									width: 60%;
-								}
-							}
-						}
-					}
+			}
+			&__tag {
+				display: inline-block;
+				position: relative;
+				height: 1.5rem;
+				margin: 0 0.5rem 0.5rem 0;
+				padding: 0 10px 0 20px;
+				border: 1px solid $color-black;
+				border-radius: 0.75rem;
+				font-size: 0.875rem;
+				line-height: 1.5rem;
+				&::before {
+					content: '#';
+					position: absolute;
+					left: 10px;
+					top: 0;
 				}
 			}
-			.carousel {
-				margin-top: 2rem;
-			}
+			// .skills__table {
+			// 	margin-top: 1rem;
+			// 	table {
+			// 		table-layout: fixed;
+			// 		width: 100%;
+			// 		font-size: 0.75rem;
+			// 		text-transform: uppercase;
+			// 		thead {
+			// 			th {
+			// 				padding: 0.5rem 1rem;
+			// 				border-top: 1px solid $color-black;
+			// 				border-bottom: 1px solid $color-black;
+			// 				background-color: $color-black;
+			// 				color: $color-main;
+			// 			}
+			// 		}
+			// 		tbody {
+			// 			th {
+			// 				padding: 0.5rem 1rem;
+			// 				border-bottom: 1px solid $color-black;
+			// 				border-right: 1px solid $color-black;
+			// 				vertical-align: middle;
+			// 			}
+			// 			td {
+			// 				padding: 0.5rem 1rem;
+			// 				border-bottom: 1px solid $color-black;
+			// 			}
+			// 			.step {
+			// 				position: relative;
+			// 				height: 0;
+			// 				padding-bottom: 10%;
+			// 				.img {
+			// 					position: absolute;
+			// 					left: 0;
+			// 					top: 0;
+			// 					z-index: 1;
+			// 					width: 100%;
+			// 				}
+			// 				.bg {
+			// 					display: inline-block;
+			// 					position: absolute;
+			// 					left: 0;
+			// 					top: 0;
+			// 					z-index: 0;
+			// 					height: 100%;
+			// 					background-color: $color-black;
+			// 					&.perc-90 {
+			// 						width: 90%;
+			// 					}
+			// 					&.perc-80 {
+			// 						width: 80%;
+			// 					}
+			// 					&.perc-70 {
+			// 						width: 70%;
+			// 					}
+			// 					&.perc-60 {
+			// 						width: 60%;
+			// 					}
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// }
+			// .carousel {
+			// 	margin-top: 2rem;
+			// }
 		}
 		.contact {
 			text-align: center;
 			margin-top: 3rem;
 			padding: 3rem 0 4rem;
-			border-top: 1px solid $color-text;
+			border-top: 1px solid $color-black;
 			a {
 				display: inline-block;
 				position: relative;
@@ -1034,7 +1054,7 @@ body {
 								top: 6px;
 								width: 3px;
 								height: 3px;
-								background-color: $color-text;
+								background-color: $color-black;
 							}
 						}
 					}
@@ -1045,7 +1065,7 @@ body {
 						height: 16px;
 						margin-right: 0.5rem;
 						padding: 0 3px;
-						background-color: $color-text;
+						background-color: $color-black;
 						font-weight: 200;
 						font-size: 0.625rem;
 						line-height: 16px;
@@ -1165,7 +1185,7 @@ body {
 		font-weight: 200;
 		color: $color-point;
 		text-align: center;
-		background-color: $color-text;
+		background-color: $color-black;
 	}
 }
 
@@ -1210,7 +1230,7 @@ body {
 		padding: 0 1rem;
 		font-weight: 200;
 		font-size: 0.875rem;
-		border: 1px solid $color-text;
+		border: 1px solid $color-black;
 		background-color:rgba(207, 207, 207, 0.6)
 	}
 	.textarea {
@@ -1243,7 +1263,7 @@ body {
 			display: inline-block;
 		}
 		&.btn--dark {
-			background-color: $color-text;
+			background-color: $color-black;
 			color: $color-main;
 			.btn__text {
 				color: $color-main;
@@ -1277,15 +1297,15 @@ body {
 		font-weight: 200;
 		font-size: 0.6875rem;
 		line-height: 28px;
-		color: $color-text;
+		color: $color-black;
 		border: 1px solid #666;
 		transition: all ease-out 0.2s;
 		&:hover {
 			border: 1px solid rgb(153, 153, 153);
 		}
 		&.btn--dark {
-			border: 1px solid $color-text;
-			background-color: $color-text;
+			border: 1px solid $color-black;
+			background-color: $color-black;
 			color: $color-main;
 			.btn__text{
 				color: $color-main;
@@ -1340,7 +1360,7 @@ body {
 	transform-style: preserve-3d;
 	transition: all 175ms cubic-bezier(0, 0, 1, 1);
 	a {
-		color: $color-text;
+		color: $color-black;
 	}
 	&::before {
 		position: absolute;
@@ -1395,7 +1415,7 @@ body {
 				margin-top: 0;
 				padding-left: 2rem;
 				border-top: 0;
-				border-left: 1px solid $color-text;
+				border-left: 1px solid $color-black;
 			}
 		}
 	}
@@ -1631,7 +1651,7 @@ body {
 					li {
 						&:hover {
 							a {
-								color: $color-text;
+								color: $color-black;
 							}
 						}
 					}

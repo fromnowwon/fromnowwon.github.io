@@ -123,8 +123,23 @@ const AboutPage = (): JSX.Element => {
 					</div>
 					<div className="introduce__cont skills">
 						<h2>Skills</h2>
-						<div className="skills__table">
-							<SkillsCarousel />
+						<div className="skills__tag-list flex-grid flex-grid--wrap">
+							<span className="skills__tag">HTML5</span>
+							<span className="skills__tag">CSS</span>
+							<span className="skills__tag">JavaScript</span>
+							<span className="skills__tag">SCSS</span>
+							<span className="skills__tag">REACT</span>
+							<span className="skills__tag">Next.js</span>
+							<span className="skills__tag">Node.js</span>
+							<span className="skills__tag">Express.js</span>
+							<span className="skills__tag">Github</span>
+							<span className="skills__tag">Git</span>
+							<span className="skills__tag">Jquery</span>
+							<span className="skills__tag">Heroku</span>
+							<span className="skills__tag">Github pages</span>
+							<span className="skills__tag">Bootstrap</span>
+							<span className="skills__tag">Semantic ui react</span>
+							<span className="skills__tag">Zeplin</span>
 						</div>
 					</div>
 				</div>
