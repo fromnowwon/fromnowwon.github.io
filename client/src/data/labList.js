@@ -47,33 +47,6 @@ export default [
 		]
 	},
 	{
-		name: "bbc",
-		image: "bbc-visual.jpg",
-		tag: ["#Clone coding", "#Scroll Interaction"],
-		title: "BBC, 코로나19가 바꿀 사무실의 미래",
-		description: "BBC VISUAL JOURNALISM에서 발행한 코로나 시대가 도래하면서 바뀌게 될 사무실 환경에 대한 콘텐츠",
-		stack: {
-			client: "React",
-			backend: "-",
-			db: "-",
-		},
-		language: "CSS",
-		link: [
-			{ 
-				title: "Original",
-				url: "https://www.bbc.com/korean/resources/idt-48d3c9a7-4063-4289-9726-611b5ea9d7b5"
-			},
-			{ 
-				title: "Clone",
-				url: "https://fromnowwon.github.io/bbc/"
-			},
-			{ 
-				title: "Github",
-				url: "https://github.com/fromnowwon/bbc/tree/main"
-			},
-		]
-	},
-	{
 		name: "movie-app",
 		image: "react-movie-app-16_9.gif",
 		tag: ["#API", "#Crawling", "#News ticker"],
@@ -142,4 +115,31 @@ export default [
 			},
 		]
 	},
+	// {
+	// 	name: "bbc",
+	// 	image: "bbc-visual.jpg",
+	// 	tag: ["#Clone coding", "#Scroll Interaction"],
+	// 	title: "BBC, 코로나19가 바꿀 사무실의 미래",
+	// 	description: "BBC VISUAL JOURNALISM에서 발행한 코로나 시대가 도래하면서 바뀌게 될 사무실 환경에 대한 콘텐츠",
+	// 	stack: {
+	// 		client: "React",
+	// 		backend: "-",
+	// 		db: "-",
+	// 	},
+	// 	language: "CSS",
+	// 	link: [
+	// 		{ 
+	// 			title: "Original",
+	// 			url: "https://www.bbc.com/korean/resources/idt-48d3c9a7-4063-4289-9726-611b5ea9d7b5"
+	// 		},
+	// 		{ 
+	// 			title: "Clone",
+	// 			url: "https://fromnowwon.github.io/bbc/"
+	// 		},
+	// 		{ 
+	// 			title: "Github",
+	// 			url: "https://github.com/fromnowwon/bbc/tree/main"
+	// 		},
+	// 	]
+	// },
 ]
