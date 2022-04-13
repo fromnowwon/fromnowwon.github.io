@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
-const Typing = ({ words } : any ): JSX.Element => {
-	const [MessageEle, setMessageEle] = useState(document.querySelector('.message'));
-	
+const Typing = ({ words } : { words : string[] } ): JSX.Element => {
+	const typingRef = useRef(null);	
 	const LETTER_TYPE_DELAY = 75;
 	const DIRECTION_FORWARDS = 0;
 
@@ -12,9 +11,7 @@ const Typing = ({ words } : any ): JSX.Element => {
 	let wordTypeInterval: ReturnType<typeof setInterval>;
 
 	const startTyping = () => {
-		if(MessageEle) {
-			wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
-		}
+		wordTypeInterval = setInterval(typeLetter, LETTER_TYPE_DELAY);
 	}
 
 	const typeLetter = () => {
@@ -32,9 +29,10 @@ const Typing = ({ words } : any ): JSX.Element => {
 			}
 
 			const textToType = word.substring(0, letterIndex);
+			const ele = typingRef.current as any;
 
-			if(MessageEle) {
-				MessageEle.textContent = textToType;
+			if (ele) {
+				ele.textContent = textToType;
 			}
 		}
 	}
@@ -51,14 +49,11 @@ const Typing = ({ words } : any ): JSX.Element => {
 	}
 
 	useEffect(() => {
-		setMessageEle(document.querySelector('.message'));
 		startTyping();
-	},[ MessageEle ])
+	}, [])
 
 	return (
-		<div className="typing-text">
-			<p className="message"></p>
-		</div>
+		<p className="typing-message" ref={ typingRef }></p>
 	)
 }
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import Auth from '../../../../hoc/auth'
-import Typing from '../../commons/TypingOnce';
+import Typing from '../../commons/Typing';
 
 const ContactPage = ():JSX.Element => {
 	const [Name, setName] = useState('');

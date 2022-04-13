@@ -49,10 +49,8 @@ body {
 		background-color: #333;
 		.page-intro__title {
 			color: $color-main;
-			.typing-text {
-				.message {
-					color: $color-main;
-				}
+			.typing-message {
+				color: $color-main;
 			}
 		}
 	}
@@ -158,6 +156,22 @@ body {
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
+}
+
+// not found
+.not-found {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $color-main;
+	z-index: 9999;
+	h2 {
+		padding: 3rem 0;
+		font-size: 3rem;
+		text-align: center;
+	}
 }
 
 // Carousel
@@ -413,12 +427,10 @@ body {
 			font-weight: 700;
 			font-size: 14vw;
 			text-transform: uppercase;
-			.typing-text {
-				.message {
-					&::after {
-						content: "_";
-						animation: blink ease 1s infinite;
-					}
+			.typing-message {
+				&::after {
+					content: "_";
+					animation: blink ease 1s infinite;
 				}
 			}
 		}

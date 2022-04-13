@@ -3,7 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 import Auth from '../../../../hoc/auth'
 import { imgURL } from '../../../Config'
 import labList from '../../../../data/labList'
-import Typing from '../../commons/TypingOnce';
+import Typing from '../../commons/Typing';
 import { useRef } from 'react';
 
 const LabPage = ():JSX.Element => {

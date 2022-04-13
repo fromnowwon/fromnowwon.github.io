@@ -2,6 +2,7 @@ import {
 	PAGE_MODE
 } from "./types";
 
+// Action creator
 export function modeHandler() {
 	let location = window.location.pathname.split('/')[1];
 	let mode = '';
@@ -13,8 +14,8 @@ export function modeHandler() {
 	} else {
 		mode = 'default-mode';
 	}
-	
-	// 모드 정보를 내보닌다.
+
+	// Action 반환
 	return {
 		type: PAGE_MODE,
 		payload: mode

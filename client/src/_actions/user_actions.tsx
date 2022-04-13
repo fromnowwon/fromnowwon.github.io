@@ -6,18 +6,21 @@ import {
 	LOGOUT_USER
 } from "./types";
 
+// Action creator
 export function loginUser(dataToSubmit: { email: string; password: string; }) {	
 	const request = axios.post('/api/users/login', dataToSubmit) 
 		.then(response => response.data)
 
-		request.then(response => {
-			console.log(response)
+		request.then((response) => {
+			console.log(response);
 			if (response.loginSuccess) {
-				console.log('로그인 성공')
+				console.log("로그인 성공");
 			} else {
-				alert (response.message)
+				alert(response.message);
 			}
-		})
+		});
+
+	// Action 반환
 	return {
 		type: LOGIN_USER,
 		payload: request 

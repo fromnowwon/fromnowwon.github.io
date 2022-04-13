@@ -1,6 +1,6 @@
 import React from 'react'
 import Auth from '../../../../hoc/auth'
-import Typing from '../../commons/TypingOnce';
+import Typing from '../../commons/Typing';
 import { imgURL } from '../../../Config';
 import { Link } from 'react-router-dom';
 
