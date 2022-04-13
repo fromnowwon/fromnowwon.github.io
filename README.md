@@ -2,6 +2,23 @@
 
 🎈 [Visit my page!](https://fromnowwon.herokuapp.com/) 🎈 
 
+<br/>
+
+![](./client/public/images/hello-world-grey.gif)
+
+<br/>
+
+## Introduction
+- 개인 포트폴리오 페이지입니다.
+
+<br/>
+
+## Tech Stack
+- Client: React, TypeScript, SCSS
+- Backend: Node.js, Express.js
+- DB: MongoDB
+
+<br/>
 
 ## Tree
 ```
