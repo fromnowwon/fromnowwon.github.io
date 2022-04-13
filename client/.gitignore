@@ -27,5 +27,6 @@ yarn-error.log*
 LocalTime.tsx
 Carousel.tsx
 workList.js
-TypingInfinite.tsx
 SkillsCarousel.tsx
+TypingInfinite.tsx
+ScrollingLogo.tsx
