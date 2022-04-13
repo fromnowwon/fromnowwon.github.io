@@ -1,1 +1,0 @@
-export const imgURL = process.env.PUBLIC_URL + '/images/'
