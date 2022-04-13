@@ -24,9 +24,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # 제외 컴포넌트
-LocalTime.tsx
-Carousel.tsx
-workList.js
-SkillsCarousel.tsx
-TypingInfinite.tsx
-ScrollingLogo.tsx
+# LocalTime.tsx
+# Carousel.tsx
+# workList.js
+# SkillsCarousel.tsx
+# TypingInfinite.tsx
+# ScrollingLogo.tsx
