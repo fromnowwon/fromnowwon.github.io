@@ -32,13 +32,12 @@ export function registerUser(dataToSubmit: { email: string; name: string; passwo
 		.then(response => response.data)
 		
 		request.then(data => {
-			console.log(data);
 			if (data.success) {
 				console.log("가입 성공");
 				window.location.href = "/login";
 			} else {
 				if (data.err.code === 11000) {
-					alert(`이메일이 중복입니다.`)
+					alert(`이미 존재하는 이메일입니다.`)
 				} else {
 					alert(`회원가입 실패. 정보를 올바르게 입력해주세요. (${data.err._message})`)
 				}
