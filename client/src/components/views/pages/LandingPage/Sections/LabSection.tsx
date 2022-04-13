@@ -11,8 +11,8 @@ const LabSection = ():JSX.Element => {
 			<div className="section__contents">
 				<div className="lab-list">
 					{
-						lab.map((item) => (
-							<div className={`lab-list__item ${item.name}`}>
+						lab.map((item, idx) => (
+							<div className={`lab-list__item ${item.name}`} key={ idx }>
 								<HashLink to={`/lab#${item.name}`} className="flex-grid flex-grid--center flex-grid--align-center">
 									<span className="item-text">{ item.title }</span>
 								</HashLink>

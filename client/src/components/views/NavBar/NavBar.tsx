@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router";
-import { auth } from '../../../_actions/user_actions';
+import { auth, logoutUser } from '../../../_actions/user_actions';
 
 const NavBar = ():JSX.Element => {
 	const navigate = useNavigate();
@@ -34,17 +34,7 @@ const NavBar = ():JSX.Element => {
 	}
 
 	const onClickHandler = () => {
-		axios.get('/api/users/logout')
-		.then(response => {
-			if (response.data.success) {
-				navigate('/login');
-			} else {
-				alert("로그인에 실패하였습니다.")
-			}
-		}).catch((err) => {
-			// 에러 넘버 확인
-			console.log(err.response.status);
-		})
+		dispatch(logoutUser());
 	}
 
 	const updatePosition = (event: { clientX: any; clientY: any; }) => {
@@ -199,14 +189,16 @@ const NavBar = ():JSX.Element => {
 									location !== '/register'
 										? (
 											AuthState && AuthState.isAuth
-											? <span className="btn">
-													<button onClick={ onClickHandler }>Sign out</button>
+											? <span className="btn-box">
+													<button onClick={ onClickHandler } className="btn btn--small">
+													<span className="btn__text">Sign out</span>
+													</button>
 												</span>
 											: (
 												<ul className="flex-grid">
 													<li className="btn-box">
 														<Link to="/register" className="btn btn--dark btn--small sign-up">
-														<span className="btn__text">Sign up</span>
+															<span className="btn__text">Sign up</span>
 														</Link>
 													</li>
 													<li className="btn-box">
@@ -262,7 +254,9 @@ const NavBar = ():JSX.Element => {
 													<button className="btn btn--small btn--dark sign-out" onClick={ () => {
 														onClickHandler()
 														hideMenu()
-													} }><span className="btn__text">Sign out</span></button>
+													} }>
+														<span className="btn__text">Sign out</span>
+													</button>
 												</span>
 											: (
 												<ul className="flex-grid">

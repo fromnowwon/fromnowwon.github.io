@@ -46,7 +46,9 @@ app.post("/mail", (req, res) => {
 app.post('/api/users/register', (req, res) => {
 	const user = new User(req.body); 
 
+	// save 전에 스키마 메서드로 비밀번호 암호화해서 전달받음
 	user.save((err, userInfo) => { 
+		console.log(err.code)
 		if(err) return res.json({ success: false, err })
 		return res.status(200).json({ success: true })
 	})
@@ -78,11 +80,14 @@ app.post('/api/users/login', (req, res) => {
 	})
 })
 
-// 권한 확인을 위한 라우트
+// 라우팅 은 앱이 특정 API 엔드 포인트에 대한 클라이언트 요청에 응답하는 방법을 정의하는 프로세스를 말한다.
+// 권한 확인을 위한 API
 app.get('/api/users/auth', auth, (req, res) => {
+	// 0: 일반 유저, 1: 어드민, 2: 특정 부서 어드민
+	// auth가 true일 경우 아래 코드 실행
 	res.status(200).json({ 
 		_id: req.user._id,
-		isAdmin: req.user.role === 0 ? false : true, // 0이 아니면 관리자
+		isAdmin: req.user.role === 0 ? false : true,
 		isAuth: true,
 		email: req.user.email,
 		name: req.user.name,
@@ -91,8 +96,10 @@ app.get('/api/users/auth', auth, (req, res) => {
 	})
 })
 
-// 로그아웃을 위한 라우트
+// 로그아웃을 위한 API
 app.get('/api/users/logout', auth, (req, res) => {
+	// findOneAndUpdate(찾을도큐먼트, 업데이트)
+	// 저장된 token 삭제
 	User.findOneAndUpdate({ _id: req.user._id }, { token: "" }, (err, user) => {
 		if(err) return res.json({ success: false, err });
 

@@ -10,7 +10,7 @@ const LandingPage = ():JSX.Element => {
 		<div className="landing-page">
 			<div className="main-visual">
 				<figure>
-					<img src={ `${imgURL}hello-world-grey.gif` } />
+					<img src={ `${imgURL}hello-world-grey.gif` } alt="Hello World" />
 				</figure>
 			</div>
 			<AboutSection />
@@ -20,7 +20,7 @@ const LandingPage = ():JSX.Element => {
 					<div className="section__title section-lab__title">Blog</div>
 					<div className="section__contents">
 						<span className="contact-ico btn-ico">
-							<a href="https://velog.io/@nemo" target="_blank" className="btn btn--default btn--dark btn--arrow">
+							<a href="https://velog.io/@nemo" target="_blank" className="btn btn--default btn--dark btn--arrow" rel="noreferrer">
 								<img src={`${imgURL}note.png`} alt="Contact" />
 							</a>
 						</span>

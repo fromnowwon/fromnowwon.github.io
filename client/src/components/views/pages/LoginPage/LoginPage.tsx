@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 import Auth from "../../../../hoc/auth"
-import { auth } from '../../../../_actions/user_actions'
-import { useDispatch } from "react-redux";
+import { auth, loginUser } from '../../../../_actions/user_actions'
+import { useDispatch, useSelector } from "react-redux";
 
 const LoginPage = ():JSX.Element => {
 	const navigate = useNavigate();
@@ -30,17 +29,7 @@ const LoginPage = ():JSX.Element => {
 			password: Password
 		}
 
-		axios.post('/api/users/login', body)
-		.then(response => {
-			if (response.data.loginSuccess) {
-				navigate('/');
-			} else {
-				alert("로그인에 실패하였습니다. 이메일과 비밀번호를 확인해주세요.")
-			}
-		}).catch((err) => {
-			// 에러 넘버 확인
-			console.log(err.response.status);
-		})
+		dispatch(loginUser(body))	
 	}
 
 	const validateForm = () => {
@@ -64,6 +53,16 @@ const LoginPage = ():JSX.Element => {
 	useEffect(() => {
 		dispatch(auth())
 	}, []);
+
+	// useEffect(() => {
+	// 	if (logState) {
+	// 		console.log(logState.isAuth)
+	// 		if (logState.isAuth) {
+	// 			navigate('/')
+	// 		}
+	// 	}
+		
+	// }, [logState])
 
 	return (
 		<section className="page login-page">

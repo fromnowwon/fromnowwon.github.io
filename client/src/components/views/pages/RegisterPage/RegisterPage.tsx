@@ -1,15 +1,18 @@
-import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { registerUser } from '../../../../_actions/user_actions'
 import Auth from "../../../../hoc/auth"
+import { useDispatch, useSelector } from 'react-redux';
 
 const RegisterPage = ():JSX.Element => {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	const [Email, setEmail] = useState("");
 	const [Name, setName] = useState("");
 	const [Password, setPassword] = useState("");
 	const [ConfirmPassword, setConfirmPassword] = useState("");
+
 
 	const onEmailHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
 		event.target.classList.remove("invalid-input");
@@ -44,18 +47,8 @@ const RegisterPage = ():JSX.Element => {
 			password: Password
 		}
 
-		axios.post('/api/users/register', body)
-		.then(response => {
-			if (response.data.success) {
-				navigate('/login')
-			} else {
-				if (response.data.err.code === 11000) {
-					alert(`이메일이 중복입니다.`)
-				} else {
-					alert(`회원가입 실패. 정보를 올바르게 입력해주세요. (에러코드: ${response.data.err.code})`)
-				}
-			}
-		})
+		dispatch(registerUser(body))
+
 	}
 
 	const validateForm = () => {
@@ -95,7 +88,7 @@ const RegisterPage = ():JSX.Element => {
 						<div className="validation-note">이름이 입력되지 않았습니다.</div>
 					</label>
 					<label>
-						<span className="form__title">Password</span>
+						<span className="form__title">Password<em className="note">*5자 이상</em></span>
 						<input className="form__input" type="password" value={ Password } onChange={ onPasswordHandler } />
 						<div className="validation-note">비밀번호가 입력되지 않았습니다.</div>
 					</label>

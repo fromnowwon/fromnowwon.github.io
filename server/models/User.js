@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');
 
-// schema 생성
+// schema 생성 (DB에 넣기 전에 검사)
 const userSchema = mongoose.Schema({
 	name: {
 		type: String,
@@ -37,14 +37,24 @@ const userSchema = mongoose.Schema({
 	}
 })
 
+// save 전에 pre 메서드를 사용해 사전 동작 정의
+// 비밀번호 암호화부터
 userSchema.pre('save', function( next ) {
 	let user = this; // userSchema
 
+	// isModified함수는 해당 값이 db에 기록된 값과 비교해서 
+	// 변경된 경우 true를, 그렇지 않은 경우 false를 반환하는 함수
+	// user 생성시는 항상 true이며, 
+	// user 수정시는 password가 변경되는 경우에만 true를 반환
+	// 모두 최초 생성일 수밖에 없다. 이미 저장된 비밀번호는 암호화된 상태니까!
 	if(user.isModified('password')) {
+		// salt는 암호화된 비밀번호 바이트 단위의 임의 문자열
+		// saltRounds(10자리)로 설정
 		bcrypt.genSalt(saltRounds, function(err, salt) {
 			if(err) return next(err);
 
 			// 성공
+			// salt를 인자로 받아 user.password를 암호화된 비밀번호 생성
 			bcrypt.hash(user.password, salt, function(err, hash) {
 				if(err) return next(err);
 				user.password = hash;
@@ -59,6 +69,8 @@ userSchema.pre('save', function( next ) {
 
 // 비밀번호 비교 메서드
 userSchema.methods.comparePassword = function(plainPassword, callback) {
+	// plainPassword : 로그인 시 사용된 비밀번호
+	// this.password : DB에 저장된 암호화된 비밀번호
 	bcrypt.compare(plainPassword, this.password, function(err, isMatch) {
 		if(err) return callback(err)
 		

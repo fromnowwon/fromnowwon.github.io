@@ -382,6 +382,9 @@ body {
 						color: $color-main;
 					}
 				}
+				.sign-out {
+					border: 1px solid $color-main;
+				}
 			}
 		}
 	}
@@ -1235,6 +1238,11 @@ body {
 		font-weight: 200;
 		font-size: 0.875rem;
 		text-transform: uppercase;
+		.note {
+			display: inline-block;
+			margin-left: 5px;
+			font-size: 0.6875rem;
+		}
 	}
 	.form__input {
 		width: 100%;
