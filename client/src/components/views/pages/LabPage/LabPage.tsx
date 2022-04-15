@@ -60,19 +60,9 @@ const LabPage = ():JSX.Element => {
 			}
 		}
 	}
-
-	const autoPlay = () => {
-		// for (let i = 0; i < videoRef.current.length; i++) {
-		// 	videoRef.current[i].play();
-		// }
-		// for (let i = 0; i < itemRef.current.length; i++) {
-		// 	itemRef.current[i].querySelector('video')?.play();
-		// }
-	}
 	
 	useEffect(() => {
 		observer();
-		autoPlay();
 	}, [])
 	
 	useEffect(() => {
@@ -133,7 +123,6 @@ const LabPage = ():JSX.Element => {
 											playsInline
 											width="100%" 
 											height="100%"
-											// ref={elem => ( videoRef.current[idx] = elem ) as any}
 										>
 											<source src={`${imgURL + item.image}`} type="video/mp4" />
 										</video>
