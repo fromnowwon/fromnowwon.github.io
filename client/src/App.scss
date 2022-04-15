@@ -1017,6 +1017,10 @@ body {
 				height: 30px;
 				-webkit-animation: bounce 2s infinite;
 				animation: bounce 2s infinite;
+				img {
+					width: 100%;
+					height: 30px;
+				}
 			}
 		}
 	}
