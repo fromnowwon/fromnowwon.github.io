@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { HashLink } from 'react-router-hash-link';
 import Auth from '../../../../hoc/auth'
 import { imgURL } from '../../../Config'
 import labList from '../../../../data/labList'
 import Typing from '../../commons/Typing';
-import { useRef } from 'react';
 
 const LabPage = ():JSX.Element => {
 	const [lab, setLab] = useState(labList);
 	const labListRef = useRef<HTMLDivElement>(null);
 	const anchorRef = useRef<HTMLDivElement>(null);
 	const itemRef = useRef<HTMLDivElement[]>([]);
+	const videoRef = useRef<any>(null);
 
 	const observer = () => {
 		const anchors = anchorRef.current?.querySelector('ul')?.children;
@@ -44,10 +44,6 @@ const LabPage = ():JSX.Element => {
 		}
 	}
 	
-	useEffect(() => {
-		observer();
-	}, [])
-	
 	const scrollEventNav = () => {
 		// const $labList = document.querySelector('.lab-list');
 		const anchor = anchorRef.current;
@@ -65,6 +61,20 @@ const LabPage = ():JSX.Element => {
 		}
 	}
 
+	const autoPlay = () => {
+		// for (let i = 0; i < videoRef.current.length; i++) {
+		// 	videoRef.current[i].play();
+		// }
+		for (let i = 0; i < itemRef.current.length; i++) {
+			itemRef.current[i].querySelector('video')?.play();
+		}
+	}
+	
+	useEffect(() => {
+		observer();
+		autoPlay();
+	}, [])
+	
 	useEffect(() => {
 		window.addEventListener("scroll", scrollEventNav);
 		return () => {
@@ -116,7 +126,14 @@ const LabPage = ():JSX.Element => {
 										{/* <figure className="visual">
 											<img src={`${imgURL + item.image}`} alt={ item.title }></img>
 										</figure> */}
-										<video autoPlay muted loop width="100%" height="100%">
+										<video 
+											autoPlay
+											muted 
+											loop 
+											width="100%" 
+											height="100%"
+											// ref={elem => ( videoRef.current[idx] = elem ) as any}
+										>
 											<source src={`${imgURL + item.image}`} type="video/mp4" />
 										</video>
 									</div>
