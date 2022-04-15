@@ -10,7 +10,6 @@ const LabPage = ():JSX.Element => {
 	const labListRef = useRef<HTMLDivElement>(null);
 	const anchorRef = useRef<HTMLDivElement>(null);
 	const itemRef = useRef<HTMLDivElement[]>([]);
-	const videoRef = useRef<any>(null);
 
 	const observer = () => {
 		const anchors = anchorRef.current?.querySelector('ul')?.children;
@@ -113,9 +112,6 @@ const LabPage = ():JSX.Element => {
 									key={ idx }
 								>
 									<div className="lab-item__visual">
-										{/* <figure className="visual">
-											<img src={`${imgURL + item.image}`} alt={ item.title }></img>
-										</figure> */}
 										<video 
 											autoPlay
 											muted 
