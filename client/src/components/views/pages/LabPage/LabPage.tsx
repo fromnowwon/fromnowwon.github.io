@@ -10,6 +10,7 @@ const LabPage = ():JSX.Element => {
 	const labListRef = useRef<HTMLDivElement>(null);
 	const anchorRef = useRef<HTMLDivElement>(null);
 	const itemRef = useRef<HTMLDivElement[]>([]);
+	const videoRef = useRef<any>(null);
 
 	const observer = () => {
 		const anchors = anchorRef.current?.querySelector('ul')?.children;

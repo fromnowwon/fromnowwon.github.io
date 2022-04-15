@@ -1014,6 +1014,7 @@ body {
 			.arrow {
 				display: inline-block;
 				width: 30px;
+				height: 30px;
 				-webkit-animation: bounce 2s infinite;
 				animation: bounce 2s infinite;
 			}
@@ -1114,6 +1115,7 @@ body {
 
 // footer
 .footer {
+	min-height: 243px;
 	.footer__container {
 		width: auto;
 		max-width: 1200px;
