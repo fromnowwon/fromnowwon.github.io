@@ -164,10 +164,6 @@ const LabPage = ():JSX.Element => {
 													</ul>
 												</div>
 											</div>
-											<div className="item-box technic-box">
-												<span className="item__name">Languages</span>
-												<span className="item__detail">{ item.language }</span> 
-											</div>
 											<div className="item-box link-box">
 												{
 													item.link.map((link, idx) => {
