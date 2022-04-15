@@ -228,7 +228,6 @@ body {
 		outline: none;
 		border: 0;
 		vertical-align: middle;
-		padding: 7px 9px;
 		border: 1px solid #bbb;
 		border-radius: 50%;
 		background: #eee;
@@ -255,10 +254,10 @@ body {
 		}
 		.scroll-to-top__btn {
 			display: block;
-			width: 10px;
-			height: 10px;
+			width: 28px;
+			height: 25px;
 			background: url('../public/images/arrow-top.png') center center no-repeat;
-			background-size: 100% auto;
+			background-size: 10px 10px;
 		}
 	}
 }

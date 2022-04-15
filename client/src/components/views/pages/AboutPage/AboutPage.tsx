@@ -33,9 +33,12 @@ const AboutPage = (): JSX.Element => {
 				<p className="page-intro__text">안녕하세요, 반갑습니다.</p>
 			</div>
 			<div className="visual">
-				<figure>
+				{/* <figure>
 					<img src={ `${imgURL}coding-v2.gif` } alt=""/>
-				</figure>
+				</figure> */}
+				<video autoPlay muted loop width="100%" height="100%">
+					<source src={`${imgURL}coding-v2.mp4`} type="video/mp4" />
+				</video>
 			</div>
 			<div className="introduce">
 				<div className="introduce__inner flex-grid flex-grid--wrap">

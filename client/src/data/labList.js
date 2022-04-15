@@ -2,7 +2,7 @@
 export default [
 	{
 		name: "next-weather-app",
-		image: "next-weather-app-16_9.gif",
+		image: "next-weather-app-16_9.mp4",
 		tag: ["#API", "#SSR"],
 		title: "Weather App",
 		description: "전세계 도시 중 원하는 곳의 이름을 검색하면 해당 지역 날씨에 대한 정보를 제공하는 애플리케이션",
@@ -25,7 +25,7 @@ export default [
 	},
 	{
 		name: "movie-watch-list",
-		image: "movie-watch-list-16_9.gif",
+		image: "movie-watch-list-16_9.mp4",
 		tag: ["#API", "#Context"],
 		title: "Movie Watch List",
 		description: "위시리스트처럼 영화의 와치리스트를 만들어 관리할 수 있는 애플리케이션",
@@ -48,7 +48,7 @@ export default [
 	},
 	{
 		name: "movie-app",
-		image: "react-movie-app-16_9.gif",
+		image: "react-movie-app-16_9.mp4",
 		tag: ["#API", "#Crawling", "#News ticker"],
 		title: "Movie App",
 		description: "네이버 OPEN API를 사용하여 영화 검색 기능을 구현, 크롤링으로 실시간 랭킹까지 보여주는 무비 애플리케이션",
@@ -71,7 +71,7 @@ export default [
 	},
 	{
 		name: "map-search-app",
-		image: "kakao-api-map-search-app-16_9.gif",
+		image: "kakao-api-map-search-app-16_9.mp4",
 		tag: ["#API", "#Map"],
 		title: "Map Search App",
 		description: "카카오 맵 API를 사용하여 지도 검색 기능을 구현한 애플리케이션",
@@ -94,7 +94,7 @@ export default [
 	},
 	{
 		name: "coin-tracker",
-		image: "coin-tracker-app.gif",
+		image: "coin-tracker-app.mp4",
 		tag: ["#API"],
 		title: "Coin Tracker",
 		description: "실시간 암호 화폐 시세, 총 시가, 거래량, 거래 변동을 보여주는 웹 서비스 구현",

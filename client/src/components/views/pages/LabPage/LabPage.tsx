@@ -113,9 +113,12 @@ const LabPage = ():JSX.Element => {
 									key={ idx }
 								>
 									<div className="lab-item__visual">
-										<figure className="visual">
+										{/* <figure className="visual">
 											<img src={`${imgURL + item.image}`} alt={ item.title }></img>
-										</figure>
+										</figure> */}
+										<video autoPlay muted loop width="100%" height="100%">
+											<source src={`${imgURL + item.image}`} type="video/mp4" />
+										</video>
 									</div>
 									<div className="lab-item__info">
 										<div className="lab-item__info__inner">

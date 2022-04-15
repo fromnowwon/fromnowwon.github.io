@@ -9,9 +9,12 @@ const LandingPage = ():JSX.Element => {
 	return (
 		<div className="landing-page">
 			<div className="main-visual">
-				<figure>
+				{/* <figure>
 					<img src={ `${imgURL}hello-world-grey.gif` } alt="Hello World" />
-				</figure>
+				</figure> */}
+				<video autoPlay muted loop width="100%" height="100%">
+					<source src={`${imgURL}hello-world-grey.mp4`} type="video/mp4" />
+				</video>
 			</div>
 			<AboutSection />
 			<LabSection />
