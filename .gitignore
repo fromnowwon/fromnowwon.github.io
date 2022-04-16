@@ -2,7 +2,7 @@
 dev.js
 
 # env
-# .env
+.env
 /node_modules
 
 # 제외 리소스
