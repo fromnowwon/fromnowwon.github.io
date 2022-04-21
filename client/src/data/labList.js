@@ -111,6 +111,28 @@ export default [
 			},
 		]
 	},
+	{
+		name: "random-quotes-generator",
+		image: "random-quotes-generator-16_9.mp4",
+		tag: ["#API", "#Webpack"],
+		title: "Random Quotes Generator",
+		description: "생성 버튼을 클릭하면 랜덤으로 명언이 출력되고 복사도 할 수 있는 애플리케이션",
+		stack: {
+			client: "Vanilla JS, TypeScript, SCSS",
+			backend: "-",
+			db: "-",
+		},
+		link: [
+			{ 
+				title: "Demo",
+				url: "https://fromnowwon.github.io/random-quotes-generator/"
+			},
+			{ 
+				title: "Github",
+				url: "https://github.com/fromnowwon/random-quotes-generator.git"
+			},
+		]
+	},
 	// {
 	// 	name: "bbc",
 	// 	image: "bbc-visual.jpg",
