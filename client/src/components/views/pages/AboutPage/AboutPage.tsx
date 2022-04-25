@@ -33,9 +33,6 @@ const AboutPage = (): JSX.Element => {
 				<p className="page-intro__text">안녕하세요, 반갑습니다.</p>
 			</div>
 			<div className="visual">
-				{/* <figure>
-					<img src={ `${imgURL}coding-v2.gif` } alt=""/>
-				</figure> */}
 				<video autoPlay muted loop playsInline width="100%" height="100%">
 					<source src={`${imgURL}coding-v2.mp4`} type="video/mp4" />
 				</video>
@@ -103,9 +100,9 @@ const AboutPage = (): JSX.Element => {
 													<a href="https://www.ikea.com/jp/ja/campaigns/ca00-everyday-eco-bags-pubefcc3c10" target="_blank">Link</a>
 												</span> */}
 												{/* Better Sleep pt.2 */}
-												<span className="link">
+												{/* <span className="link">
 													<a href="https://www.ikea.com/jp/ja/campaigns/ca00-better-sleep-pubbd353860" target="_blank">Link</a>
-												</span>
+												</span> */}
 												{/* CLOSET STORAGE */}
 												<span className="link">
 													<a href="https://www.ikea.com/jp/ja/campaigns/ca00-closet-storage-pube7c8fa70" target="_blank">Link</a>
