@@ -73,11 +73,10 @@ export default [
 		title: "Map Search App",
 		description: "카카오 맵 API를 사용하여 지도 검색 기능을 구현한 애플리케이션",
 		stack: {
-			client: "React",
+			client: "React, TypeScript, SCSS",
 			backend: "-",
 			db: "-",
 		},
-		language: "TypeScript, SCSS",
 		link: [
 			{ 
 				title: "Demo",
