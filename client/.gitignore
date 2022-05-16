@@ -12,21 +12,21 @@
 /build
 
 # misc
-.DS_Store
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# .DS_Store
+# .env
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 # 제외 컴포넌트 (배포 시 포함)
-LocalTime.tsx
-Carousel.tsx
-workList.js
-SkillsCarousel.tsx
-TypingInfinite.tsx
-ScrollingLogo.tsx
+# LocalTime.tsx
+# Carousel.tsx
+# workList.js
+# SkillsCarousel.tsx
+# TypingInfinite.tsx
+# ScrollingLogo.tsx

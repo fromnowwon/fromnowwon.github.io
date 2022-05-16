@@ -23,6 +23,28 @@ export default [
 		]
 	},
 	{
+		name: "zust-todo-app",
+		image: "zust-todo-app.mp4",
+		tag: ["#Zustand", "#Emotion"],
+		title: "Zust To-Do App",
+		description: "할 일을 간단하게 정리해둘 수 있는 애플리케이션",
+		stack: {
+			client: "React, TypeScript, Zustand, Emotion, Material UI",
+			backend: "-",
+			db: "-",
+		},
+		link: [
+			{ 
+				title: "Demo",
+				url: "https://fromnowwon.github.io/zust-todo-app/"
+			},
+			{ 
+				title: "Github",
+				url: "https://github.com/fromnowwon/zust-todo-app.git"
+			},
+		]
+	},
+	{
 		name: "movie-watch-list",
 		image: "movie-watch-list-16_9.mp4",
 		tag: ["#API", "#Context"],
