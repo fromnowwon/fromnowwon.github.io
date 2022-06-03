@@ -10,16 +10,14 @@ const skills = [
 	"JavaScript",
 	"SCSS",
 	"REACT",
-	"Next.js",
-	"Node.js",
-	"Express.js",
 	"Github",
 	"Git",
 	"Jquery",
 	"Heroku",
 	"Github pages",
 	"Bootstrap",
-	"Semantic ui react",
+	"Emotion",
+	"Styled-components",
 	"Zeplin",
 ]
 
