@@ -12,7 +12,7 @@ const skills = [
 	"REACT",
 	"Github",
 	"Git",
-	"Jquery",
+	"jQuery",
 	"Heroku",
 	"Github pages",
 	"Bootstrap",
@@ -74,9 +74,9 @@ const AboutPage = (): JSX.Element => {
 													<a href="https://www.ikea.com/jp/ja/customer-service/shopping-at-ikea/ratings-reviews-pub9acdaea0" target="_blank">Link</a>
 												</span> */}
 												{/* Digital showroom */}
-												<span className="link">
+												{/* <span className="link">
 													<a href="https://www.ikea.com/jp/ja/campaigns/digital-showroom-pub0585e8d0" target="_blank">Link</a>
-												</span>
+												</span> */}
 												{/* Online outlet */}
 												<span className="link">
 													<a href="https://www.ikea.com/jp/ja/campaigns/ca01-online-outlet-pubb2e5fa70" target="_blank">Link</a>
